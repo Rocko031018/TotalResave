@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <!-- Agrega enlaces a FontAwesome o cualquier otro conjunto de iconos que desees usar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="outer">
+        <div class="container">
+            <div class="row">
+                <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                    <div class="panel ">
+                        <div class="panel-heading">
+                            <h3 class="pt-3 font-weight-bold">Registro</h3>
+                        </div>
+                        <div class="panel-body p-3">
+                            <form [formGroup]="signUpForm">
+
+                                <div class="form-group pt-3">
+                                    <!-- Agrega el icono de nombre -->
+                                    <div class="imput-field" [class.error]="signUpForm.controls['firstName'].dirty && signUpForm.hasError('required', 'firstName')">
+                                        <span class="fa fa-user"></span>
+                                        <input formControlName="firstName" type="text" placeholder="FirstName">
+                                    </div>
+                                </div>
+                                <small  *ngIf="signUpForm.controls['firstName'].dirty && signUpForm.hasError('required', 'firstName')" class="text-danger">*First name is required</small>
+                                
+                                <div class="form-group pt-3">
+                                    <!-- Agrega el icono de apellidos -->
+                                    <div class="imput-field" [class.error]="signUpForm.controls['lastName'].dirty && signUpForm.hasError('required', 'lastName')">
+                                        <span class="fa fa-user"></span>
+                                        <input formControlName="lastName" type="text" placeholder="LastName">
+                                    </div>
+                                </div>
+                                <small *ngIf="signUpForm.controls['lastName'].dirty && signUpForm.hasError('required', 'lastName')" class="text-danger">*Last Name is required</small>
+
+                                <div class="form-group pt-3">
+                                    <!-- Agrega el icono de número de teléfono -->
+                                    <div class="imput-field" [class.error]="signUpForm.controls['phone'].dirty && signUpForm.hasError('required', 'phone')">
+                                        <span class="fa fa-phone"></span>
+                                        <input formControlName="phone" type="text" placeholder="Phone" pattern="[0-9]{10}">
+                                    </div>
+                                </div>
+                                <small *ngIf="signUpForm.controls['phone'].dirty && signUpForm.hasError('required', 'phone')" class="text-danger">*Phone is required</small>
+
+                                <div class="form-group pt-3">
+                                    <!-- Agrega el icono de correo electrónico -->
+                                    <div class="imput-field" [class.error]="signUpForm.controls['email'].dirty && signUpForm.hasError('required', 'email')">
+                                        <span class="fa fa-envelope"></span>
+                                        <input formControlName="email" type="text" placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+                                    </div>
+                                </div>
+                                <small small *ngIf="signUpForm.controls['email'].dirty && signUpForm.hasError('required', 'email')" class="text-danger">*Email is required</small>
+
+
+                                <div class="form-group pt-3">
+                                    <!-- Agrega el icono de nombre de usuario -->
+                                    <div  class="imput-field" [class.error]="signUpForm.controls['userName'].dirty && signUpForm.hasError('required', 'userName')">
+                                        <span class="fa fa-user"></span>
+                                        <input formControlName="userName" type="text" placeholder="userNamer">
+                                    </div>
+                                </div>
+                                <small *ngIf="signUpForm.controls['userName'].dirty && signUpForm.hasError('required', 'userName')" class="text-danger">*User Name is required</small>
+
+
+                                <div class="form-group pt-3">
+                                    <div class="imput-field" [class.error]="signUpForm.controls['password'].dirty && signUpForm.hasError('required', 'password')">
+                                        <span class="fa fa-unlock p2"></span>
+                                        <input formControlName="password" [type]="type" placeholder="Password">
+                                        <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
+                                    </div>
+                                </div>
+                                <small *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required', 'password')" class="text-danger">*Pasword is required</small>
+
+                               
+
+                                <button type="submit" class="btn btn-primary btn-block mt-4 w-100" (click)="onSingup()">
+                                    <!-- Agrega el icono de registro -->
+                                    <span class="fa fa-user-plus"></span> Registrarse
+                                </button>
+
+                                <div class="text-center pt-4 text-muted">
+                                    ¿Ya tienes cuenta? <a id="forget" routerLink="/login">Ingresa</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
