@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    
+</head>
+<body>
+
+<header>
+    <h1>Panel de Administración</h1>
+</header>
+
+<main>
+    <section class="nueva-cancha">
+        <h2>Agregar Nueva Cancha o Campo</h2>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="horarios">Horarios Disponibles (Formato HH:MM - HH:MM):</label>
+            <textarea id="horarios" name="horarios" rows="3" placeholder="Ejemplo: 08:00 - 10:00, 12:00 - 14:00" required></textarea>
+
+            <label for="informacion">Información Detallada:</label>
+            <textarea id="informacion" name="informacion" rows="6" required></textarea>
+
+            <label for="precio">Precio:</label>
+            <input type="text" id="precio" name="precio" required>
+
+            <input type="submit" value="Agregar">
+        </form>
+    </section>
+
+    <!-- Otras secciones para modificar y eliminar canchas -->
+
+</main>
+
+
+
+</body>
+</html>
